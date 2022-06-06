@@ -10,4 +10,16 @@ public class Ocena {
         this.ocena = ocena;
         this.dataOceny=dataOceny;
     }
+
+    public int getOcena() {
+        return ocena;
+    }
+
+    @Override
+    public String toString() {
+        return "Ocena{" +
+                "ocena=" + ocena +
+                ", dataOceny=" + dataOceny +
+                '}';
+    }
 }
