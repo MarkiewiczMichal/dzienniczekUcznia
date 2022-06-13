@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Szkola {
-    private List<Klasa> listaklas = new ArrayList<>();
+    private List<SchoolClass> listaklas = new ArrayList<>();
 
 
-    public void dodajNowaKlase(Klasa name) {
+    public void dodajNowaKlase(SchoolClass name) {
         listaklas.add(name);
     }
 
-    public List<Klasa> getListaKlaswSzkole() {
+    public List<SchoolClass> getListaKlaswSzkole() {
         return listaklas;
     }
 }

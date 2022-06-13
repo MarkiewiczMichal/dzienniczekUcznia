@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Ocena {
     private final int ocena;
-    private final LocalDate dataOceny;
+    public final LocalDate dataOceny;
 
     Ocena(int ocena, LocalDate dataOceny){
         this.ocena = ocena;
@@ -13,6 +13,10 @@ public class Ocena {
 
     public int getOcena() {
         return ocena;
+    }
+
+    public LocalDate getDate(){
+        return dataOceny;
     }
 
     @Override

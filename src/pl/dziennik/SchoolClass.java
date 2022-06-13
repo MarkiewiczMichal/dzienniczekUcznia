@@ -3,11 +3,11 @@ package pl.dziennik;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Klasa {
+public class SchoolClass {
     private final String nazwaKlasy;
     private List<Uczen> listaUczniowWklasie = new ArrayList<>();
 
-    Klasa(String nazwaKlasy) {
+    SchoolClass(String nazwaKlasy) {
         this.nazwaKlasy = nazwaKlasy;
     }
 

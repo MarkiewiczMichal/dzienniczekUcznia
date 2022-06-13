@@ -6,12 +6,12 @@ public class Main {
 
     public static void main(String[] args) {
         Szkola szkolaPodstawowa = new Szkola();
-        Klasa klasa1a = new Klasa("1a");
-        Klasa klasa1b = new Klasa("1b");
-        Klasa klasa1c = new Klasa("1c");
-        Klasa klasa2a = new Klasa("2a");
-        Klasa klasa2b = new Klasa("2b");
-        Klasa klasa2c = new Klasa("2c");
+        SchoolClass klasa1a = new SchoolClass("1a");
+        SchoolClass klasa1b = new SchoolClass("1b");
+        SchoolClass klasa1c = new SchoolClass("1c");
+        SchoolClass klasa2a = new SchoolClass("2a");
+        SchoolClass klasa2b = new SchoolClass("2b");
+        SchoolClass klasa2c = new SchoolClass("2c");
 
         szkolaPodstawowa.dodajNowaKlase(klasa1a);
         szkolaPodstawowa.dodajNowaKlase(klasa1b);
@@ -43,26 +43,34 @@ public class Main {
         System.out.println(szkolaPodstawowa.getListaKlaswSzkole());
         System.out.println(klasa1a.getListaUczniowWklasie());
 
-        Ocena sixMark = new Ocena(6,LocalDate.of(2022,6,6));
-        Ocena  fiveMark = new Ocena(5,LocalDate.of(2022,6,7));
+        Ocena sixMark = new Ocena(6,LocalDate.of(2022,6,9));
+        Ocena  fiveMark = new Ocena(5,LocalDate.of(2022,6,9));
 
         sonia.dodajOcene(NazwaPrzedmiotu.MATEMATYKA,sixMark);
         sonia.dodajOcene(NazwaPrzedmiotu.MATEMATYKA,fiveMark);
 
+        System.out.println("sonia ma dwie oceny z matmy 5 i 6");
         System.out.println(sonia.podajOcenyZprzedmiotu(NazwaPrzedmiotu.MATEMATYKA));
 
-        Ocena  oneMark = new Ocena(1,LocalDate.of(2022,12,31));
+        Ocena  oneMark = new Ocena(1,LocalDate.of(2020,11,9));
         sonia.dodajOcene(NazwaPrzedmiotu.FIZYKA,oneMark);
 
+        System.out.println("sonia nadal ma dwie oceny z matmy 5 i 6");
         System.out.println(sonia.podajOcenyZprzedmiotu(NazwaPrzedmiotu.MATEMATYKA));
+        System.out.println("sonia ma jedynke z fizyki");
         System.out.println(sonia.podajOcenyZprzedmiotu(NazwaPrzedmiotu.FIZYKA));
 
         sonia.dodajOcene(NazwaPrzedmiotu.MATEMATYKA,oneMark);
+
+        System.out.println("sonia nadal ma trzy  oceny z matmy 5 i 6 i 1");
         System.out.println(sonia.podajOcenyZprzedmiotu(NazwaPrzedmiotu.MATEMATYKA));
 
 
         System.out.println("--------------");
 
         System.out.println(sonia.podajSredniaOcenzPrzedmiotu(NazwaPrzedmiotu.MATEMATYKA));
+
+        sonia.podajOcenyZokresuCzasowego(NazwaPrzedmiotu.MATEMATYKA,LocalDate.of(2020,1,1),LocalDate.of(2021,1,1));
+
     }
 }

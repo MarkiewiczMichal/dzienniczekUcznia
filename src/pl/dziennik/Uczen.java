@@ -1,9 +1,8 @@
 package pl.dziennik;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.LocalDate;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class Uczen {
     private String imie;
@@ -31,20 +30,44 @@ public class Uczen {
         return listaOcen.get(nazwaPrzedmiotu);
     }
 
-    public float podajSredniaOcenzPrzedmiotu (NazwaPrzedmiotu nazwaPrzedmiotu){
+    public float podajSredniaOcenzPrzedmiotu(NazwaPrzedmiotu nazwaPrzedmiotu) {
         float srednia = 0;
-        int liczbaOcen=0;
-        for ( Map.Entry<NazwaPrzedmiotu,List<Ocena>> oceny: listaOcen.entrySet()) {
-            System.out.println(oceny.getKey());
-            for ( Ocena poszczegolneOceny: oceny.getValue()) {
-                if (oceny.getKey() == nazwaPrzedmiotu){
-                    srednia += poszczegolneOceny.getOcena();
-                    liczbaOcen++;
-                }
+        int liczbaOcen = 0;
+        for (Map.Entry<NazwaPrzedmiotu, List<Ocena>> oceny : listaOcen.entrySet()) {
+            //      System.out.println(oceny.getKey());
+
+
+            Stream<Ocena> ocenaStream = oceny.getValue().stream();
+            ocenaStream
+                    .filter(g -> g.getDate().isAfter(LocalDate.of(2021, 1, 1)))
+                    .filter(g -> g.getOcena() > 1)
+                    .forEach(System.out::println);
+
+
+//            for (Ocena poszczegolneOceny : oceny.getValue()) {
+//                if (oceny.getKey() == nazwaPrzedmiotu) {
+//                    srednia += poszczegolneOceny.getOcena();
+//                    liczbaOcen++;
+//                }
+
+            //          }
+        }
+        return srednia / liczbaOcen;
+    }
+
+    public void podajOcenyZokresuCzasowego(NazwaPrzedmiotu nazwaPrzedmiotu, LocalDate start, LocalDate end) {
+        for (Map.Entry<NazwaPrzedmiotu, List<Ocena>> mapaOcen : listaOcen.entrySet()) {
+
+
+            if (mapaOcen.getKey() == nazwaPrzedmiotu) {
+                Stream<Ocena> ocenaStream = mapaOcen.getValue().stream();
+                ocenaStream
+                        .filter(g -> g.getDate().isAfter(start))
+                        .filter(g -> g.getDate().isBefore(end))
+                        .forEach(System.out::println);
 
             }
         }
-        return srednia/liczbaOcen;
     }
 
 
