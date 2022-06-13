@@ -4,25 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SchoolClass {
-    private final String nazwaKlasy;
-    private List<Uczen> listaUczniowWklasie = new ArrayList<>();
+    private final String nameOfschoolClass;
+    private final List<Student> listOfStudentsInClass = new ArrayList<>();
 
-    SchoolClass(String nazwaKlasy) {
-        this.nazwaKlasy = nazwaKlasy;
+    SchoolClass(String nameOfschoolClass) {
+        this.nameOfschoolClass = nameOfschoolClass;
     }
 
-    public void dodajUczniaDoKlasy(Uczen uczen) {
-        listaUczniowWklasie.add(uczen);
+    public void addStudentToschoolClass(Student student) {
+        listOfStudentsInClass.add(student);
     }
 
-    public List<Uczen> getListaUczniowWklasie() {
-        return listaUczniowWklasie;
+    public List<Student> getListOfStudentsInClass() {
+        return listOfStudentsInClass;
     }
 
     @Override
     public String toString() {
-        return "Klasa{" +
-                "nazwaKlasy='" + nazwaKlasy + '\'' +
+        return "{" +
+                "Class name='" + nameOfschoolClass + '\'' +
                 '}';
     }
 }
