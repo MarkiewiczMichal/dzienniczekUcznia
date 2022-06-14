@@ -30,15 +30,15 @@ public class Main {
         Student oliwia = new Student("Oliwia", "Dąbrowska");
         Student bartek = new Student("Bartek", "Lewandowski");
 
-        class1a.addStudentToschoolClass(sonia);
-        class1a.addStudentToschoolClass(krzys);
-        class1a.addStudentToschoolClass(wiktoria);
-        class1b.addStudentToschoolClass(kamila);
-        class1b.addStudentToschoolClass(maria);
-        class1b.addStudentToschoolClass(maja);
-        class1c.addStudentToschoolClass(pawel);
-        class1c.addStudentToschoolClass(oliwia);
-        class1c.addStudentToschoolClass(bartek);
+        class1a.addStudent(sonia);
+        class1a.addStudent(krzys);
+        class1a.addStudent(wiktoria);
+        class1b.addStudent(kamila);
+        class1b.addStudent(maria);
+        class1b.addStudent(maja);
+        class1c.addStudent(pawel);
+        class1c.addStudent(oliwia);
+        class1c.addStudent(bartek);
 
 
         System.out.println("--------");
@@ -49,11 +49,11 @@ public class Main {
         System.out.println("Schow list of student in class 1a:");
         System.out.println(class1a.getListOfStudentsInClass());
 
-        SchoolGrade sixMark = new SchoolGrade(6,LocalDate.of(2022,6,9));
-        SchoolGrade fiveMark = new SchoolGrade(5,LocalDate.of(2022,6,9));
+        SchoolGrade sixMark = new SchoolGrade(6, LocalDate.of(2022, 6, 9));
+        SchoolGrade fiveMark = new SchoolGrade(5, LocalDate.of(2022, 6, 9));
 
-        sonia.addGrade(SchoolSubject.MATH,sixMark);
-        sonia.addGrade(SchoolSubject.MATH,fiveMark);
+        sonia.addGrade(SchoolSubject.MATH, sixMark);
+        sonia.addGrade(SchoolSubject.MATH, fiveMark);
 
         System.out.println("--------");
         System.out.println("Sonia gets two grades in math");
@@ -61,8 +61,8 @@ public class Main {
 
         System.out.println("--------");
         System.out.println("Sonia get one grade in physics");
-        SchoolGrade oneMark = new SchoolGrade(1,LocalDate.of(2020,11,9));
-        sonia.addGrade(SchoolSubject.PHYSICS,oneMark);
+        SchoolGrade oneMark = new SchoolGrade(1, LocalDate.of(2020, 11, 9));
+        sonia.addGrade(SchoolSubject.PHYSICS, oneMark);
 
 
         System.out.println("--------");
@@ -73,7 +73,7 @@ public class Main {
         System.out.println("Sonia have one grade in physics");
         System.out.println(sonia.getListOfGrades(SchoolSubject.PHYSICS));
 
-        sonia.addGrade(SchoolSubject.MATH,oneMark);
+        sonia.addGrade(SchoolSubject.MATH, oneMark);
 
         System.out.println("--------");
         System.out.println("Sonia get third grade in math");
@@ -88,14 +88,14 @@ public class Main {
 
         System.out.println("--------");
         System.out.println("Show sonias grade in math from 2020-01-01 to 2021-01-01");
-        sonia.getGradesOverPeriod(SchoolSubject.MATH,LocalDate.of(2020,1,1),LocalDate.of(2021,1,1));
+        sonia.getGradesOverPeriod(SchoolSubject.MATH, LocalDate.of(2020, 1, 1), LocalDate.of(2021, 1, 1));
 
         System.out.println(class1a.getListOfStudentsInClass());
-        class1a.removeStudentFromSchoolClass(sonia);
+        class1a.removeStudentByName(sonia);
         System.out.println(class1a.getListOfStudentsInClass());
-        class1a.addStudentToschoolClass(sonia);
+        class1a.addStudent(sonia);
         System.out.println(class1a.getListOfStudentsInClass());
-        class1a.removeStudentFromSchoolClass(sonia);
+        class1a.removeStudentByName(sonia);
         System.out.println(class1a.getListOfStudentsInClass());
     }
 }
