@@ -4,7 +4,7 @@
 * Dodaj klasę szkolną
 * Wyświetl klasy w szkole
 * Dodaj ucznia do poszczególnej klasy
-* ///Usuń ucznia z klasy
+* Usuń ucznia z klasy
 * Wyświetla listę uczniów w klasie
 * Dodaj ocene uczniowi z datą otrzymania
 * Wyświetl oceny ucznia z danego przedmiotu
