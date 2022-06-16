@@ -3,6 +3,7 @@
 ##Szkola
 * Dodaj klasę szkolną
 * Wyświetl klasy w szkole
+* Wyświetl wszystkich uczniów w szkole
 * Dodaj ucznia do poszczególnej klasy
 * Usuń ucznia z klasy
 * Wyświetla listę uczniów w klasie
