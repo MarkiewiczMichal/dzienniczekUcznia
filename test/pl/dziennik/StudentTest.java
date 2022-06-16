@@ -43,14 +43,14 @@ class StudentTest {
         Student noName = new Student("no", "name");
 
         //when
-        noName.addGrade(SchoolSubject.MATH, new SchoolGrade(5, LocalDate.now()));
-        noName.addGrade(SchoolSubject.MATH, new SchoolGrade(3, LocalDate.now()));
-        noName.addGrade(SchoolSubject.MATH, new SchoolGrade(3, LocalDate.now()));
-        noName.addGrade(SchoolSubject.BIOLOGY, new SchoolGrade(3, LocalDate.now()));
+        noName.addGrade(SchoolSubject.MATH, new SchoolGrade(6, LocalDate.of(2022, 1, 30)));
+        noName.addGrade(SchoolSubject.MATH, new SchoolGrade(3, LocalDate.of(2021, 3, 12)));
+        noName.addGrade(SchoolSubject.MATH, new SchoolGrade(2, LocalDate.of(2023, 9, 5)));
+        noName.addGrade(SchoolSubject.BIOLOGY, new SchoolGrade(3, LocalDate.of(2019, 11, 12)));
 
         //then
         assertEquals((float) 11 / 3, noName.averagePerGrades(SchoolSubject.MATH));
-
+        assertEquals(0, noName.averagePerGrades(SchoolSubject.PHYSICS));
     }
 
     @Test
@@ -68,6 +68,10 @@ class StudentTest {
         assertEquals(1, noName.getGradesOverPeriod(SchoolSubject.MATH,
                 LocalDate.of(2020, 1, 1),
                 LocalDate.of(2021, 1, 1)).size());
+
+        assertEquals(1, noName.getGradesOverPeriod(SchoolSubject.MATH,
+                LocalDate.of(2020, 10, 1),
+                LocalDate.of(2020, 10, 1)).size());
 
     }
 }
