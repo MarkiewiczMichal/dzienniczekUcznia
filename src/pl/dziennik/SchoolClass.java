@@ -1,22 +1,21 @@
 package pl.dziennik;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class SchoolClass {
-    private final String nameOfschoolClass;
+    private final String name;
     private final List<Student> listOfStudentsInClass = new ArrayList<>();
 
-    SchoolClass(String nameOfschoolClass) {
-        this.nameOfschoolClass = nameOfschoolClass;
+    SchoolClass(String name) {
+        this.name = name;
     }
 
-    public void addStudentToschoolClass(Student student) {
+    public void addStudent(Student student) {
         listOfStudentsInClass.add(student);
     }
 
-    public void removeStudentFromSchoolClass(Student student) {
+    public void removeStudentByName(Student student) {
 //        Iterator<Student> it = listOfStudentsInClass.iterator();
 //        while (it.hasNext()){
 //            if(it.next()==student){
@@ -32,7 +31,7 @@ public class SchoolClass {
     @Override
     public String toString() {
         return "{" +
-                "Class name='" + nameOfschoolClass + '\'' +
+                "Class name='" + name + '\'' +
                 '}';
     }
 }
