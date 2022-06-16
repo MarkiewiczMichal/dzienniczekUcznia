@@ -90,5 +90,12 @@ public class Main {
         System.out.println("Show sonias grade in math from 2020-01-01 to 2021-01-01");
         sonia.getGradesOverPeriod(SchoolSubject.MATH,LocalDate.of(2020,1,1),LocalDate.of(2021,1,1));
 
+        System.out.println(class1a.getListOfStudentsInClass());
+        class1a.removeStudentFromSchoolClass(sonia);
+        System.out.println(class1a.getListOfStudentsInClass());
+        class1a.addStudentToschoolClass(sonia);
+        System.out.println(class1a.getListOfStudentsInClass());
+        class1a.removeStudentFromSchoolClass(sonia);
+        System.out.println(class1a.getListOfStudentsInClass());
     }
 }
