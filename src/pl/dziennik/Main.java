@@ -84,12 +84,13 @@ public class Main {
         System.out.println("Show sonias grades in math");
         System.out.println(sonia.getListOfGrades(SchoolSubject.MATH));
         System.out.println("Show average grades in math");
-        System.out.println(sonia.averageOfGrades(SchoolSubject.MATH));
+        System.out.println(sonia.averagePerGrades(SchoolSubject.MATH));
 
         System.out.println("--------");
         System.out.println("Show sonias grade in math from 2020-01-01 to 2021-01-01");
-        sonia.getGradesOverPeriod(SchoolSubject.MATH, LocalDate.of(2020, 1, 1), LocalDate.of(2021, 1, 1));
-
+        System.out.println(
+                sonia.getGradesOverPeriod(SchoolSubject.MATH, LocalDate.of(2020, 1, 1), LocalDate.of(2021, 1, 1))
+        );
         System.out.println(class1a.getListOfStudentsInClass());
         class1a.removeStudentByName(sonia);
         System.out.println(class1a.getListOfStudentsInClass());

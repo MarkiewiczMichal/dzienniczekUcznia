@@ -2,6 +2,7 @@ package pl.dziennik;
 
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Student {
@@ -30,7 +31,7 @@ public class Student {
         return listOfGrades.get(schoolSubject);
     }
 
-    public float averageOfGrades(SchoolSubject schoolSubject) {
+    public float averagePerGrades(SchoolSubject schoolSubject) {
         float average = 0;
         int numberOfGrades = 0;
         for (Map.Entry<SchoolSubject, List<SchoolGrade>> mapOfGrades : listOfGrades.entrySet()) {
@@ -44,17 +45,19 @@ public class Student {
         return average / numberOfGrades;
     }
 
-    public void getGradesOverPeriod(SchoolSubject schoolSubject, LocalDate start, LocalDate end) {
+    public List<SchoolGrade> getGradesOverPeriod(SchoolSubject schoolSubject, LocalDate start, LocalDate end) {
+        List<SchoolGrade> tempGradelist = new ArrayList<>();
 
         for (Map.Entry<SchoolSubject, List<SchoolGrade>> mapOfGrades : listOfGrades.entrySet()) {
             if (mapOfGrades.getKey() == schoolSubject) {
                 Stream<SchoolGrade> gradeStream = mapOfGrades.getValue().stream();
-                gradeStream
+                tempGradelist=gradeStream
                         .filter(g -> g.getDate().isAfter(start))
                         .filter(g -> g.getDate().isBefore(end))
-                        .forEach(System.out::println);
+                        .toList();
             }
         }
+        return tempGradelist;
     }
 
 
